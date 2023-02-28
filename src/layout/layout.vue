@@ -1,8 +1,8 @@
-/*
- * @Description:多种菜单模式
- * @Author: Xucranger
- * @Date: 2023-02-02 11:55
- */
+<!--
+  * @Description: 多菜单样式
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:08
+-->
 <template>
   <!--左侧菜单 模式-->
   <SideLayout v-if="layout === LAYOUT_ENUM.SIDE.value" />

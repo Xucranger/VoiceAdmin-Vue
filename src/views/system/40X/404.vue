@@ -1,11 +1,7 @@
 <!--
-  * 403 不存在 页面
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-08-08 20:46:18
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 404不存在页面
+  * @Author:      Xucranger
+  * @Date:        2023-02-03 10:18
 -->
 <template>
   <a-result status="403" title="对不起，您访问的内容不存在！">

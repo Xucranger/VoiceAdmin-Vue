@@ -31,7 +31,7 @@
       </a-form-item>
 
       <a-form-item label="所在城市" name="provinceCityDistrict">
-        <AreaCascader type="province_city_district" style="width: 100%" v-model:value="area" placeholder="请选择所在城市" @change="changeArea" />
+        <Area type="province_city_district" style="width: 100%" v-model:value="area" placeholder="请选择所在城市" @change="changeArea" />
       </a-form-item>
       <a-form-item label="详细地址" name="address">
         <a-input v-model:value="form.address" placeholder="请输入详细地址" />

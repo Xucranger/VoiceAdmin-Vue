@@ -8,6 +8,7 @@ import { appDefaultConfig } from '/@/config/app-config';
 import localStorageKeyConst from '/@/constants/local-storage-key-const';
 import { smartSentry } from '/@/lib/smart-sentry';
 import { localRead } from '/@/utils/local-util';
+import {computed} from "vue";
 
 let state = { ...appDefaultConfig };
 
@@ -46,6 +47,6 @@ export const useAppConfigStore = defineStore({
     },
     hideHelpDoc() {
       this.helpDocFlag = false;
-    },
+    }
   },
 });

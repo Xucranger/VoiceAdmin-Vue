@@ -1,17 +1,13 @@
 <!--
-  * 消息通知
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:17:18 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 消息同志
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:59
 -->
 
 <template>
   <a-dropdown trigger="click" v-model:visible="show">
     <div @click="fetchMessage">
-      <a-badge count="12">
+      <a-badge >
         <div style="width: 26px; height: 26px">
           <BellOutlined :style="{ fontSize: '18px' }" />
         </div>
@@ -25,42 +21,19 @@
             <a-tab-pane tab="通知" key="1">
               <a-list class="tab-pane" size="small">
                 <a-list-item>
-                  <a-list-item-meta description="7天前">
-                    <template #title>
-                      <a href="#">今天洛阳天气39°c，洛阳变各阳...</a>
-                    </template>
-                    <template #avatar>
-                      <a-avatar src="https://zhuoda.vip/images/blog/profile-128-128.jpg" />
-                    </template>
-                  </a-list-item-meta>
+                  <h style="text-align: center">暂无通知</h>
+<!--                  <a-list-item-meta description="7天前">-->
+<!--                    -->
+<!--                    <template #title>-->
+<!--                      <a href="#">今天洛阳天气39°c，洛阳变各阳...</a>-->
+<!--                    </template>-->
+<!--                    <template #avatar>-->
+<!--                      <a-avatar src="https://zhuoda.vip/images/blog/profile-128-128.jpg" />-->
+<!--                    </template>-->
+<!--                  </a-list-item-meta>-->
                 </a-list-item>
-                <a-list-item>
-                  <a-list-item-meta description="7天前">
-                    <template #title>
-                      <a href="#">六月的雨　就是无情的你...</a>
-                    </template>
-                    <template #avatar>
-                      <a-avatar src="https://zhuoda.vip/images/blog/profile-128-128.jpg" />
-                    </template>
-                  </a-list-item-meta>
-                </a-list-item>
-                <a-list-item>
-                  <a-list-item-meta description="7天前">
-                    <template #title>
-                      <a href="#">今年河南天气炎热，河南变可南...</a>
-                    </template>
-                    <template #avatar>
-                      <a-avatar src="https://zhuoda.vip/images/blog/profile-128-128.jpg" />
-                    </template>
-                  </a-list-item-meta>
-                </a-list-item>
+
               </a-list>
-            </a-tab-pane>
-            <a-tab-pane tab="消息" key="2">
-              <a-list class="tab-pane" />
-            </a-tab-pane>
-            <a-tab-pane tab="待办" key="3">
-              <a-list class="tab-pane" />
             </a-tab-pane>
           </a-tabs>
         </a-spin>

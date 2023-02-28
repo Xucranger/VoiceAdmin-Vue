@@ -1,8 +1,3 @@
-/*
- * @Description:登陆前的一些操作
- * @Author: Xucranger
- * @Date: 2023-01-28 17:45
- */
 import _ from 'lodash';
 import { defineStore } from 'pinia';
 import localKey from '/@/constants/local-storage-key-const';

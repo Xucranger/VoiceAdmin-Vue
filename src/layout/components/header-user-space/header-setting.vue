@@ -1,28 +1,24 @@
 <!--
-  * 设置模块
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:18:20 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 设置模块
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:45
 -->
 
 <template>
   <a-drawer :title="$t('setting.title')" placement="right" :visible="visible" @close="close">
     <a-form layout="horizontal" :label-col="{ span: 8 }">
-      <a-form-item label="语言/Language">
-        <a-select v-model:value="formState.language" @change="changeLanguage" style="width: 120px">
-          <a-select-option v-for="item in i18nList" :key="item.value" :value="item.value">{{ item.text }}</a-select-option>
-        </a-select>
-      </a-form-item>
-      <a-form-item label="菜单布局">
-        <a-radio-group @change="changeLayout" button-style="solid" v-model:value="formState.layout">
-          <a-radio-button v-for="item in $smartEnumPlugin.getValueDescList('LAYOUT_ENUM')" :key="item.value" :value="item.value">
-            {{ item.desc }}
-          </a-radio-button>
-        </a-radio-group>
-      </a-form-item>
+<!--      <a-form-item label="语言/Language">-->
+<!--        <a-select v-model:value="formState.language" @change="changeLanguage" style="width: 120px">-->
+<!--          <a-select-option v-for="item in i18nList" :key="item.value" :value="item.value">{{ item.text }}</a-select-option>-->
+<!--        </a-select>-->
+<!--      </a-form-item>-->
+<!--      <a-form-item label="菜单布局">-->
+<!--        <a-radio-group @change="changeLayout" button-style="solid" v-model:value="formState.layout">-->
+<!--          <a-radio-button v-for="item in $smartEnumPlugin.getValueDescList('LAYOUT_ENUM')" :key="item.value" :value="item.value">-->
+<!--            {{ item.desc }}-->
+<!--          </a-radio-button>-->
+<!--        </a-radio-group>-->
+<!--      </a-form-item>-->
       <a-form-item label="菜单宽度" v-if="formState.layout === LAYOUT_ENUM.SIDE.value">
         <a-input-number @change="changeSideMenuWidth" v-model:value="formState.sideMenuWidth" :min="1" />
         像素（px）
@@ -43,8 +39,9 @@
         <a-switch @change="changeFooterFlag" v-model:checked="formState.footerFlag" checked-children="显示" un-checked-children="隐藏" />
       </a-form-item>
       <a-form-item label="帮助文档">
-        <a-switch @change="changeHelpDocFlag" v-model:checked="formState.helpDocFlag" checked-children="显示" un-checked-children="隐藏" />
+        <a-switch disabled @change="changeHelpDocFlag" v-model:checked="formState.helpDocFlag" checked-children="显示" un-checked-children="(待开发)" />
       </a-form-item>
+
     </a-form>
     <div class="footer">
       <a-button style="margin-right: 8px" type="primary" @click="copy">复制配置信息</a-button>

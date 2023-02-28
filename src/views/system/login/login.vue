@@ -8,7 +8,6 @@
 
     </div>
     <div class="box-item login">
-      <img class="login-qr" :src="loginQR" />
       <div class="login-title">账号登录</div>
       <a-form ref="formRef" class="login-form" :model="loginForm" :rules="rules">
         <a-form-item name="loginName">
@@ -22,10 +21,6 @@
             placeholder="请输入密码"
           />
         </a-form-item>
-        <a-form-item name="captchaCode">
-          <a-input class="captcha-input" v-model:value.trim="loginForm.captchaCode" placeholder="请输入验证码" />
-          <img class="captcha-img" :src="captchaBase64Image" @click="getCaptcha" />
-        </a-form-item>
         <a-form-item>
           <a-checkbox v-model:checked="rememberPwd">记住密码</a-checkbox>
           <span> ( 账号：admin, 密码：123456)</span>
@@ -34,19 +29,6 @@
           <div class="btn" @click="onLogin">登录</div>
         </a-form-item>
       </a-form>
-      <div class="more">
-        <div class="title-box">
-          <p class="line"></p>
-          <p class="title">其他方式登录</p>
-          <p class="line"></p>
-        </div>
-        <div class="login-type">
-          <img :src="aliLogin" />
-          <img :src="qqLogin" />
-          <img :src="googleLogin" />
-          <img :src="weiboLogin" />
-        </div>
-      </div>
     </div>
   </div>
 </template>
@@ -60,32 +42,19 @@
   import { useUserStore } from '/@/store/modules/system/user';
   import { saveTokenToCookie } from '/@/utils/cookie-util';
 
-  import gongzhonghao from '/@/assets/images/1024lab/1024lab-gzh.jpg';
-  import zhuoda from '/@/assets/images/1024lab/zhuoda-wechat.jpg';
-  import loginQR from '/@/assets/images/login/login-qr.png';
-  import xiaozhen from '/@/assets/images/1024lab/xiaozhen-gzh.jpg';
-
-  import aliLogin from '/@/assets/images/login/ali-icon.png';
-  import googleLogin from '/@/assets/images/login/google-icon.png';
-  import qqLogin from '/@/assets/images/login/qq-icon.png';
-  import weiboLogin from '/@/assets/images/login/weibo-icon.png';
-
   import { buildRoutes } from '/@/router/index';
   import { smartSentry } from '/@/lib/smart-sentry';
 
   //--------------------- 登录表单 ---------------------------------
 
   const loginForm = reactive({
-    loginName: 'admin',
+    loginName: '',
     password: '',
-    captchaCode: '',
-    captchaUuid: '',
     loginDevice: LOGIN_DEVICE_ENUM.PC.value,
   });
   const rules = {
     loginName: [{ required: true, message: '用户名不能为空' }],
     password: [{ required: true, message: '密码不能为空' }],
-    captchaCode: [{ required: true, message: '验证码不能为空' }],
   };
 
   const showPassword = ref(false);
@@ -111,7 +80,6 @@
       try {
         SmartLoading.show();
         const res = await loginApi.login(loginForm);
-        stopRefrestCaptchaInterval();
         saveTokenToCookie(res.data.token ? res.data.token : '');
         message.success('登录成功');
         //更新用户信息到pinia
@@ -119,10 +87,10 @@
         //构建系统的路由
         buildRoutes();
         router.push('/home');
-      } catch (e) {
+      }
+      catch (e) {
         if (e.data && e.data.code === 30001) {
           loginForm.captchaCode = '';
-          getCaptcha();
         }
         smartSentry.captureError(e);
       } finally {
@@ -130,36 +98,6 @@
       }
     });
   }
-
-  //--------------------- 验证码 ---------------------------------
-
-  const captchaBase64Image = ref('');
-  async function getCaptcha() {
-    try {
-      let captchaResult = await loginApi.getCaptcha();
-      captchaBase64Image.value = captchaResult.data.captchaBase64Image;
-      loginForm.captchaUuid = captchaResult.data.captchaUuid;
-      beginRefrestCaptchaInterval(captchaResult.data.expireSeconds);
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  let refrestCaptchaInterval = null;
-  function beginRefrestCaptchaInterval(expireSeconds) {
-    if (refrestCaptchaInterval === null) {
-      refrestCaptchaInterval = setInterval(getCaptcha, (expireSeconds - 5) * 1000);
-    }
-  }
-
-  function stopRefrestCaptchaInterval() {
-    if (refrestCaptchaInterval != null) {
-      clearInterval(refrestCaptchaInterval);
-      refrestCaptchaInterval = null;
-    }
-  }
-
-  onMounted(getCaptcha);
 </script>
 <style lang="less" scoped>
   @import './login.less';

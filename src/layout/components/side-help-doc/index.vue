@@ -1,53 +1,49 @@
 <!--
-  *  帮助文档 
-  *
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:40:16 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 帮助文档
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:04
 -->
 <template>
   <div class="help-doc-wrapper">
     <!-----头部---->
     <div class="help-doc-header">
-      <strong>帮助文档</strong>
+      <strong>我要反馈</strong>
       <strong class="help-doc-close" @click="hideHelpDoc"><close-outlined /></strong>
     </div>
 
     <!-----联系客服区域---->
-    <div class="help-doc-contact" @click="contactModal.show">
-      <div class="help-doc-contact-left">
-        <phone-outlined style="font-size: 23px; line-height: 50px; margin-top: 5px" />
-      </div>
-      <div class="help-doc-contact-right">
-        <a>联系客服</a>
-        <div class="help-doc-contac-time">9:00-17:00 5x7小时</div>
-      </div>
-    </div>
+<!--    <div class="help-doc-contact" @click="contactModal.show">-->
+<!--      <div class="help-doc-contact-left">-->
+<!--        <phone-outlined style="font-size: 23px; line-height: 50px; margin-top: 5px" />-->
+<!--      </div>-->
+<!--      <div class="help-doc-contact-right">-->
+<!--        <a>联系客服</a>-->
+<!--        <div class="help-doc-contac-time">9:00-17:00 5x7小时</div>-->
+<!--      </div>-->
+<!--    </div>-->
 
-    <a-divider />
+<!--    <a-divider />-->
 
     <!-----意见反馈---->
     <div class="feedback">
-      <div>反馈让您不满意的点，我们争取做到更好<smile-outlined style="margin-left: 5px" /></div>
-      <div class="feedback-message-list">
-        <div v-for="item in feedbackMessageList" :key="item.feedbackId" class="feedback-message">{{ item.feedbackContent }}</div>
-      </div>
-      <a @click="feedbackModal.show">我也要反馈</a>
+      <div>帮助文档最后再写<smile-outlined style="margin-left: 5px" /></div>
+<!--      <div class="feedback-message-list">-->
+<!--        <div v-for="item in feedbackMessageList" :key="item.feedbackId" class="feedback-message">{{ item.feedbackContent }}</div>-->
+<!--      </div>-->
+<!--      <a @click="feedbackModal.show">我也要反馈</a>-->
     </div>
 
     <a-divider />
 
     <!-----文档列表---->
-    <div class="help-doc-list">
-      <div class="help-doc-item-all">
-        <router-link tag="a" target="_blank" :to="{ path: '/help-doc/detail' }">查看全部文档 >></router-link>
-      </div>
-      <div class="help-doc-item" v-for="item in helpDocList" :key="item.helpDocId">
-        <router-link tag="a" target="_blank" :to="{ path: '/help-doc/detail', query: { helpDocId: item.helpDocId } }">{{ item.title }}</router-link>
-      </div>
-    </div>
+<!--    <div class="help-doc-list">-->
+<!--      <div class="help-doc-item-all">-->
+<!--        <router-link tag="a" target="_blank" :to="{ path: '/help-doc/detail' }">查看全部文档 >></router-link>-->
+<!--      </div>-->
+<!--      <div class="help-doc-item" v-for="item in helpDocList" :key="item.helpDocId">-->
+<!--        <router-link tag="a" target="_blank" :to="{ path: '/help-doc/detail', query: { helpDocId: item.helpDocId } }">{{ item.title }}</router-link>-->
+<!--      </div>-->
+<!--    </div>-->
 
     <!-----联系客服---->
     <ContactModal ref="contactModal" />

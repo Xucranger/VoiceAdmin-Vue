@@ -17,7 +17,11 @@ import privilegePlugin from '/@/plugins/privilege-plugin';
 import { privilegeDirective } from '/@/directives/privilege';
 import { router } from "/@/router/index";
 import { store }   from "/@/store/index";
+import { loginApi } from '/@/api/system/login/login-api';
+import { buildRoutes } from '/@/router/index';
+import { useUserStore } from '/@/store/modules/system/user';
 import { i18n } from "/@/i18n/index"
+import { smartSentry } from '/@/lib/smart-sentry';
 
 //不需要获取用户信息、用户菜单、用户菜单动态路由，直接初始化vue即可
 let token = getTokenFromCookie();

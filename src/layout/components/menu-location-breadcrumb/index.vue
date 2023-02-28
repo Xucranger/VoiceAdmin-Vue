@@ -1,11 +1,7 @@
 <!--
-  * 面包屑
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:29:12 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 面包屑
+  * @Author:      Xucranger
+  * @Date:        2023-02-12 16:24
 -->
 <template>
   <a-breadcrumb separator=">" style="display: inline" v-if="breadCrumbFlag">

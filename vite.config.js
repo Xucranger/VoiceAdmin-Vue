@@ -31,7 +31,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     host: '0.0.0.0',
-    port: 8081,
+    port: 9527,
   },
   optimizeDeps: {
     include: ['ant-design-vue/es/locale/zh_CN', 'dayjs/locale/zh-cn', 'ant-design-vue/es/locale/en_US'],

@@ -4,9 +4,9 @@
  * @Date: 2023-01-28 18:20
  */
 
-export const PAGE_SIZE = 10;
+export const PAGE_SIZE = 5;
 
-export const PAGE_SIZE_OPTIONS = ['10', '15', '20', '30', '40', '50', '75', '100', '150', '200', '300', '500'];
+export const PAGE_SIZE_OPTIONS = ['5','10', '15', '20', '30', '40', '50', '75', '100', '150', '200', '300', '500'];
 
 //登录页面名字
 export const PAGE_PATH_LOGIN = '/login';

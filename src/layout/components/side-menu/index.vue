@@ -1,11 +1,7 @@
 <!--
-  * 传统菜单
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:29:12 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 传统菜单
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:20
 -->
 <template>
   <!--左侧菜单分为两部分：1、顶部logo区域，包含 logo和名称;2、下方菜单区域-->
@@ -28,7 +24,7 @@
   import { computed, ref, watch } from 'vue';
   import { useRouter } from 'vue-router';
   import RecursionMenu from './recursion-menu.vue';
-  import logoImg from '/@/assets/images/logo/smart-admin-logo.png';
+  import logoImg from '/@/assets/images/logo/mylogo.png';
   import { HOME_PAGE_NAME } from '/@/constants/system/home-const';
   import { useAppConfigStore } from '/@/store/modules/system/app-config';
 

@@ -1,16 +1,12 @@
 <!--
-  * 底部：版权、公司等信息
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:29:12 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 底部公司版权信息
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:04
 -->
 <template>
   <div class="version" >
-    <a target="_blank" href="https://www.1024lab.net">
-      SmartAdmin V2.x @copyright 河南·洛阳【1024创新实验室】 Since 2012-{{ currentYear }}
+    <a target="_blank" href="https://152.136.113.191">
+      VoiceAdmin Vue By Xucranger
     </a>
   </div>
 </template>

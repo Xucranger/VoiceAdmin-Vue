@@ -1,11 +1,7 @@
 <!--
-  *  展开菜单模式
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:40:16 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 展开菜单样式
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:08
 -->
 <template>
   <a-layout class="admin-layout" style="min-height: 100%">

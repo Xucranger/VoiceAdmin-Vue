@@ -1,11 +1,7 @@
 <!--
-  * 传统菜单-递归菜单
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:29:12 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  * @Description: 传统菜单第归
+  * @Author:      Xucranger
+  * @Date:        2023-02-06 04:08
 -->
 <template>
   <a-sub-menu :key="menuInfo.menuId">

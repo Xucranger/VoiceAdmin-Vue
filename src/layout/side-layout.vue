@@ -1,3 +1,8 @@
+<!--
+  * @Description: 菜单样式
+  * @Author:      Xucranger
+  * @Date:        2023-02-05 04:08
+-->
 <template>
   <a-layout class="admin-layout" style="min-height: 100%">
     <!-- 侧边菜单 side-menu -->
@@ -13,8 +18,8 @@
         <a-row class="layout-header-user" justify="space-between">
           <a-col class="layout-header-left">
             <span class="collapsed-button">
-              <menu-unfold-outlined v-if="collapsed" class="trigger" @click="() => (collapsed = !collapsed)" />
-              <menu-fold-outlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+              <menu-unfold-outlined v-if="collapsed" class="trigger" @click="()=> collapsed = !collapsed" />
+              <menu-fold-outlined v-else class="trigger" @click="()=> collapsed = !collapsed" />
             </span>
             <a-tooltip placement="bottom">
               <template #title>首页</template>
@@ -60,8 +65,7 @@
       <a-layout-footer class="layout-footer" v-show="footerFlag">
         <smart-footer />
       </a-layout-footer>
-      <!--- 回到顶部 -->
-      <a-back-top :target="backTopTarget" :visibilityHeight="80" />
+
     </a-layout>
     <!-- 右侧帮助文档 help-doc -->
     <a-layout-sider v-show="helpDocFlag" theme="light" :width="180" class="help-doc-sider" :trigger="null" style="min-height: 100%">
@@ -114,7 +118,14 @@
   function goHome() {
     router.push({ name: HOME_PAGE_NAME });
   }
-
+  function fold(){
+    // collapsed.value = true;
+    useAppConfigStore().showHelpDoc();
+  }
+  function unfold(){
+    // collapsed.value = false;
+    useAppConfigStore().hideHelpDoc();
+  }
   window.addEventListener('resize', function () {
     windowHeight.value = window.innerHeight;
   });

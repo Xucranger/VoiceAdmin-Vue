@@ -1,12 +1,7 @@
 <!--
-  *  表格列设置
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-08-26 23:45:51 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
-  *
+  * @Description: 表格操作
+  * @Author:      Xucranger
+  * @Date:        2023-02-26 21:15
 -->
 
 <template>
@@ -26,11 +21,11 @@
         <template #icon><redo-outlined /></template>
       </a-button>
     </a-tooltip>
-    <a-tooltip title="列设置">
-      <a-button type="text" @click="showModal" size="small">
-        <template #icon><setting-outlined /></template>
-      </a-button>
-    </a-tooltip>
+<!--    <a-tooltip title="列设置">-->
+<!--      <a-button type="text" @click="showModal" size="small">-->
+<!--        <template #icon><setting-outlined /></template>-->
+<!--      </a-button>-->
+<!--    </a-tooltip>-->
     <SmartTableColumnModal ref="smartTableColumnModal" @change="updateColumn" />
   </span>
 </template>
