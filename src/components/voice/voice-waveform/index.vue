@@ -1,5 +1,5 @@
 <template>
-    <div class="echarts-box">
+    <div class="echart2">
       <div class="wave-form" id="wave-form"></div>
     </div>
 </template>
@@ -27,7 +27,7 @@ function init(data){
   let option = {
     title: {
       left: 'center',
-      text: '音频/音波'
+      text: '音波'
     },
     tooltip: {
       trigger: 'axis'
@@ -91,7 +91,7 @@ function init(data){
 }
 </script>
 <style lang='less' scoped>
-.echarts-box {
+.echart2 {
   display: flex;
   align-items: center;
   justify-content: center;

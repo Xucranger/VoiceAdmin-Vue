@@ -1,17 +1,6 @@
 <template>
   <a-form class="smart-query-form">
     <a-row class="smart-query-form-row">
-
-
-      <!--      选择设备-->
-      <!--      <a-cascader-->
-      <!--          label=""-->
-      <!--          v-model:value="value"-->
-      <!--          :options="options"-->
-      <!--          expand-trigger="hover"-->
-      <!--          placeholder="采样点名"-->
-      <!--          class="smart-query-form-item"-->
-      <!--      />-->
       <VCascader></VCascader>
 
 
@@ -56,13 +45,41 @@
       </a-button>
     </a-row>
   </a-form>
-  <a-row :gutter="[10, 10]">
 
     <a-col :span="24">
-      <a-card size="small" :bordered="false" >
-        <WaveForm/>
-      </a-card>
+        <a-card size="small" :bordered="false" >
+            <a-row class="smart-table-btn-block">
+                <div class="smart-table-setting-block">
+                    <TableOperator v-model="tableColumns"  :refresh="queryNoticeList" />
+                </div>
+            </a-row>
+            <WaveForm/>
+        </a-card>
     </a-col>
+    <a-col :span="24">
+        <a-card size="small" :bordered="false" >
+            <a-row class="smart-table-btn-block">
+                <div class="smart-table-setting-block">
+                    <TableOperator v-model="tableColumns"  :refresh="queryNoticeList" />
+                </div>
+            </a-row>
+            <Spectrum/>
+        </a-card>
+    </a-col>
+  <a-row :gutter="[10, 10]">
+<!--      <WaveForm/><WaveForm/>-->
+<!--      <Spectrum/><Spectrum/>-->
+<!--    <a-col :span="24">-->
+<!--      <a-card size="small" :bordered="false" >-->
+<!--        <WaveForm/><WaveForm/>-->
+
+<!--      </a-card>-->
+<!--        <a-card size="small" :bordered="false" >-->
+<!--            <Spectrum/><Spectrum/>-->
+
+<!--        </a-card>-->
+
+<!--    </a-col>-->
   </a-row>
   <FilePreviewModal ref="filePreviewModalRef" />
 
@@ -87,6 +104,7 @@ import VCascader from '/@/views/voice/manage/components/voice-manage-cascader.vu
 import { noticeApi } from '/@/api/business/oa/notice-api';
 import { smartSentry } from '/@/lib/smart-sentry';
 import WaveForm from '/@/components/voice/voice-waveform/index.vue';
+import Spectrum from '/@/components/voice/voice-spectrum/index.vue';
 import FilePreviewModal from '/@/components/support/file-preview-modal/index.vue';
 import FileUpload from '/@/components/support/file-upload/index.vue';
 import { FILE_FOLDER_TYPE_ENUM } from '/@/constants/support/file-const';

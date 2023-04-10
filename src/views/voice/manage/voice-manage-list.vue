@@ -194,7 +194,9 @@
   };
   const queryForm = reactive({ ...queryFormState });
 
-  const tableData = ref([]);
+  const tableData = reactive([{
+      id:1,voiceId:'测试用例1',hz:22010,smaplingNum:111,uploadTime:'2023-3-31',uploader:'虚幻性'
+  }]);
   const total = ref(0);
   const tableLoading = ref(false);
 
